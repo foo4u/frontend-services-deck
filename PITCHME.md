@@ -32,19 +32,11 @@ client request to a particular endpoint.
 
 @title[Routing Requests]
 
-<p><span class="slide-title">Routing Requests</span></p>
-
 ```javascript
 app.get('/', function (req, res) {
   res.send('Hello World!')
 });
 ```
-
----
-
-@title[Routing Requests]
-
-<p><span class="slide-title">Routing Requests</span></p>
 
 ```javascript
 app.delete('/user', function (req, res) {
