@@ -53,7 +53,7 @@ We'll write basic middleware function in today's workshop.
 
 ---
 
-Here is a simple example of a middleware function called “myLogger”. This function just prints “LOGGED” when
+- Here is a simple example of a middleware function called “myLogger”. This function just prints “LOGGED” when
 a request to the app passes through it. The middleware function is assigned to a variable named myLogger.
 
 ```javascript
@@ -73,9 +73,13 @@ Introduction to creating a model and rendering a view with Express and Pug
 
 ---
 
+### Set view engine
+
 ```javascript
 app.set('view engine', 'pug');
 ```
+
+### index.pug template
 
 ```pug
 doctype html
@@ -86,47 +90,11 @@ html
     h1= message
 ```
 
+#### Model & View
+
 ```javascript
 app.get('/', (req, res) => {
   res.render('index', { title: 'Hey', message: 'Hello there!' })
 });
 ```
-
-
-
-## Template Help
-
-- [Code Presenting](https://github.com/gitpitch/gitpitch/wiki/Code-Presenting)
-  + [Repo Source](https://github.com/gitpitch/gitpitch/wiki/Code-Delimiter-Slides), [Static Blocks](https://github.com/gitpitch/gitpitch/wiki/Code-Slides), [GIST](https://github.com/gitpitch/gitpitch/wiki/GIST-Slides) 
-- [Custom CSS Styling](https://github.com/gitpitch/gitpitch/wiki/Slideshow-Custom-CSS)
-- [Slideshow Background Image](https://github.com/gitpitch/gitpitch/wiki/Background-Setting)
-- [Slide-specific Background Images](https://github.com/gitpitch/gitpitch/wiki/Image-Slides#background)
-- [Custom Logo](https://github.com/gitpitch/gitpitch/wiki/Logo-Setting) [TOC](https://github.com/gitpitch/gitpitch/wiki/Table-of-Contents) [Footnotes](https://github.com/gitpitch/gitpitch/wiki/Footnote-Setting)
-
----
-
-### Template Versions
-
-- #### [Base Template  @fa[external-link gp-download]](https://gitpitch.com/gitpitch/templates/white)
-- #### [Code Maximized @fa[external-link gp-download]](https://gitpitch.com/gitpitch/templates/white?p=codemax)
-- #### [Speaker Notes @fa[external-link gp-download]](https://gitpitch.com/gitpitch/templates/white?p=speaker)
-
----
-
-### Questions?
-
-<br>
-
-@fa[twitter gp-contact](@gitpitch)
-
-@fa[github gp-contact](gitpitch)
-
-@fa[medium gp-contact](@gitpitch)
-
----?image=assets/image/gitpitch-audience.jpg&opacity=100
-
-@title[Download this Template!]
-
-### <span class="white">Get your presentation started!</span>
-### [Download this template @fa[external-link gp-download]](https://gitpitch.com/template/download/white)
 
