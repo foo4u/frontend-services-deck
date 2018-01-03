@@ -73,13 +73,13 @@ Introduction to creating a model and rendering a view with Express and Pug
 
 ---
 
-### Set view engine
+##### Set view engine
 
 ```javascript
 app.set('view engine', 'pug');
 ```
 
-### index.pug template
+##### index.pug template
 
 ```pug
 doctype html
@@ -90,7 +90,7 @@ html
     h1= message
 ```
 
-#### Model & View
+##### Model & View
 
 ```javascript
 app.get('/', (req, res) => {
