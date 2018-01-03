@@ -98,3 +98,25 @@ app.get('/', (req, res) => {
 });
 ```
 
+---
+
+## Error Handling
+
+Error handlers are special type of middleware that will be called when an exception is thrown.
+
+---
+
+```javascript
+app.use((err, req, res, next) => {
+  console.error(err.stack)
+  res.status(500).send('Something broke!')
+});
+```
+
+---
+
+## Hands on time!
+
+
+
+
