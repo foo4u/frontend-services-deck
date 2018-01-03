@@ -33,29 +33,66 @@ client request to a particular endpoint.
 @title[Routing Requests]
 
 ```javascript
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.send('Hello World!')
 });
 ```
 
 ```javascript
-app.delete('/user', function (req, res) {
+app.delete('/user', (req, res) => {
   res.send('Got a DELETE request at /user')
 });
 ```
 
 ---
-@[1,2](You can present code inlined within your slide markdown too.)
-@[9-17](Displayed using code-syntax highlighting just like your IDE.)
-@[19-20](Again, all of this without ever leaving your slideshow.)
 
----?gist=onetapbeyond/494e0fecaf0d6a2aa2acadfb8eb9d6e8&lang=scala&title=Scala GIST
+## Middleware
 
-@[23](You can even present code found within any GitHub GIST.)
-@[41-53](GIST source code is beautifully rendered on any slide.)
-@[57-62](And code-presenting works seamlessly for GIST too, both online and offline.)
+Middleware are functions that can enhance or modify a request, add security, or preemptively render a response. 
+We'll write basic middleware function in today's workshop.
 
 ---
+
+Here is a simple example of a middleware function called “myLogger”. This function just prints “LOGGED” when
+a request to the app passes through it. The middleware function is assigned to a variable named myLogger.
+
+```javascript
+const myLogger = (req, res, next) => {
+  console.log('LOGGED')
+  next()
+};
+
+app.use(myLogger);
+```
+
+---
+
+## Express MVC Pattern
+
+Introduction to creating a model and rendering a view with Express and Pug
+
+---
+
+```javascript
+app.set('view engine', 'pug');
+```
+
+```pug
+doctype html
+html
+  head
+    title= title
+  body
+    h1= message
+```
+
+```javascript
+app.get('/', (req, res) => {
+  res.render('index', { title: 'Hey', message: 'Hello there!' })
+});
+```
+
+
 
 ## Template Help
 
